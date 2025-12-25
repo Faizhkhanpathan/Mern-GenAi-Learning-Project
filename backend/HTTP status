@@ -1,0 +1,37 @@
+; HTTP Status Codes (Error & Server) – very short & clear
+
+; 🔵 Success (2xx)
+
+; 200 → OK (Request successful)
+
+; 201 → Created (Data saved)
+
+; 🟡 Client Error (4xx)
+
+; 400 → Bad Request (Wrong data sent)
+
+; 401 → Unauthorized (Login required)
+
+; 403 → Forbidden (No permission)
+
+; 404 → Not Found (URL/API not found)
+
+; 409 → Conflict (Duplicate data)
+
+; 422 → Validation error
+
+; 🔴 Server Error (5xx)
+
+; 500 → Internal Server Error (Server crash/bug)
+
+; 502 → Bad Gateway
+
+; 503 → Service Unavailable (Server down)
+
+; 504 → Gateway Timeout
+
+; 👉 Rule yaad rakho:
+
+; 4xx = Client ki galti
+
+; 5xx = Server ki galti

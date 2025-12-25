@@ -1,0 +1,59 @@
+# mongosh
+# show databases                 // show all databases
+
+# use databaseName               // switch/create database
+
+# show collections               // show all collections in current DB
+
+# db.createCollection("users")   // create collection
+
+# show collections               // verify collection created
+
+# db.users.insertOne({           // insert single document
+#   id: 1,
+#   username: "faiz",
+#   age: 21
+# })
+
+# db.users.insertMany([          // insert multiple documents
+#   { id: 2, username: "ali", age: 22 },
+#   { id: 3, username: "rahul", age: 23 }
+# ])
+
+# db.users.find()                // fetch all documents
+
+# db.users.find({ age: 21 })     // fetch documents with condition
+
+# db.users.updateOne(            // update single document
+#   { id: 1 },
+#   { $set: { age: 22 } }
+# )
+
+# db.users.updateMany(           // update multiple documents
+#   { age: { $gte: 22 } },
+#   { $set: { status: "active" } }    //gt :- graterthan //lt less than
+                                       
+# )
+
+# db.users.deleteOne({ id: 3 })  // delete one document
+
+# db.users.deleteMany({          // delete multiple documents
+#   age: { $lt: 22 }
+# })
+
+# db.users.drop()                // delete collection
+
+# db.dropDatabase()              // delete database
+
+# use mongodb compass
+
+# mongoose 
+# :- object data modeling (odm  (nodejs and mongo server merging))
+
+# nodejs apne server pe run karrha hota hai ,mongodb apne server pe run karrha hota hai  dono ko milagne ke liye we use  mongoose //mongoose is a linkup  
+
+
+
+# // =========================================================================================================
+
+# 

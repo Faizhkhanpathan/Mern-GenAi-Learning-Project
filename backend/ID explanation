@@ -1,0 +1,65 @@
+
+🔍 Step-by-Step Working
+router.put('/:id', async (req, res) => {
+
+
+👉 Client URL me ID bhejta hai
+Example: /Person/65ab12cd34
+
+const personId = req.params.id;
+
+
+👉 URL se ID extract hoti hai
+(real world: Aadhaar number jaisa unique ID)
+
+const updatedPersonData = req.body;
+
+
+👉 Client jo naya data bhejta hai, wo req.body me hota hai
+(name, age, work etc.)
+
+const response = await Person.findByIdAndUpdate(
+  personId,
+  updatedPersonData,
+  { new: true }
+);
+
+
+👉 MongoDB ka kaam:
+
+findById → record dhundhta hai
+
+update → naya data set karta hai
+
+{ new: true } → updated data return karta hai
+
+🌍 Real World Example
+
+Hospital system me:
+
+Patient ID = 123
+
+Doctor ne address update kiya
+
+👉 System:
+
+ID se patient dhundta hai
+
+Address update karta hai
+
+Updated record wapas bhejta hai
+
+🧠 Roman Hindi + English (Very Short)
+
+Client URL me ID bhejta hai →
+req.params se ID milti hai →
+req.body se naya data milta hai →
+MongoDB record update ho jata hai.
+
+✅ Final Use
+
+PUT → Full update
+
+PATCH → Partial update
+
+ID → Kis record ko update karna hai

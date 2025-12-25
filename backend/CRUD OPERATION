@@ -1,0 +1,21 @@
+# CRUD Operations vs HTTP Methods
+
+# CRUD (Database Operations):
+
+# C → Create
+
+# R → Read
+
+# U → Update
+
+# D → Delete
+
+# Mapped to HTTP Methods:
+
+# Create → POST
+
+# Read → GET
+
+# Update → PUT / PATCH
+
+# Delete → DELETE

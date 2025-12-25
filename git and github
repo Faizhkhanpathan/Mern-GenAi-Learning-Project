@@ -1,0 +1,14 @@
+    //  git keeps snapshoot of that code 
+
+// git init 
+
+// git status 
+
+// git add .    //means save File
+
+
+
+// cd ..]
+
+
+// remove node_modules :- from terminal added :- git rm -r--cached node_modules
