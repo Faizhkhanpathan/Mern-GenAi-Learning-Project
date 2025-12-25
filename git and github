@@ -11,4 +11,15 @@
 // cd ..]
 
 
-// remove node_modules :- from terminal added :- git rm -r--cached node_modules
+// remove node_modules :- from terminal added :- git rm -r--cached node_modules\
+
+
+// git commit -m "revision Of Fullstack part 3"
+
+// hey
+
+
+
+// git add .  // means Alll File ans folder 
+
+// git add <-File name->  // only one file add
