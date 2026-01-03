@@ -1,0 +1,66 @@
+; 🟢 Session (Server-side auth)
+
+; User login karta hai
+
+; Server session create karta hai
+
+; Browser me session ID (cookie) store hoti hai
+
+; Har request ke sath cookie jati hai
+
+; Pros:
+; ✔ Easy to use
+; ✔ Secure for small apps
+
+; Cons:
+; ❌ Server memory use hoti
+; ❌ Scale karna hard
+
+; Example:
+
+; “User login → server yaad rakhta hai”
+
+; 🔵 Token (JWT – Client-side auth)
+
+; User login karta hai
+
+; Server token generate karta hai
+
+; Token client me store hota (localStorage / header)
+
+; Har request me token send hota
+
+; Pros:
+; ✔ Stateless (server ko yaad nahi rakhna)
+; ✔ Best for APIs & mobile apps
+
+; Cons:
+; ❌ Token leak hua to risk
+; ❌ Logout manage karna thoda tricky
+
+; Example:
+
+; “User ke paas entry pass (token) hota hai”
+
+; ⚡ One-Line Difference
+
+; Session = server yaad rakhta hai
+; Token = user khud proof leke aata hai
+
+; 🧠 Kab kya use kare?
+
+; Small website / form login → Session
+
+; API / MERN / Mobile app → JWT Token
+
+; // ===========================================================================================
+
+                    ; JWT TOKENS:- jsons webs token
+;  // ==============================================================================================
+ 
+ # Jwt TOKENS
+
+
+# INSTALL JWT
+
+; npm install jsonwebtoken

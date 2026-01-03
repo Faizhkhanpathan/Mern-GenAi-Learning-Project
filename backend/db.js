@@ -1,17 +1,18 @@
-const mongoose=require('mongoose');
 
-const mongoURL ='mongodb://127.0.0.1:27017/lerner'
- 
+require('dotenv').config(); 
+const mongoose=require('mongoose');
+// const mongoURL='mongodb+srv://FAIZHHHKHAN786:FHRASKHAN@cluster0.upogdzi.mongodb.net/lerner?retryWrites=true&w=majority'
 // mongoose.connect(mongoURL, {   //
 //    useNewUrlParser:true,
 //    useUnifiedTopology:true
 // })
 
+// ✅ DEFINE mongoURL properly
+const mongoURL = process.env.MONGODB_URL;   // this is a bridge between nodejs and mongodb
+
 mongoose.connect(mongoURL);
-const db = mongoose.connection;   // this is a bridge between nodejs and mongodb
-
-
 //EVENT LISTNER
+const db = mongoose.connection;
 
 db.on('connected',()=>{
   console.log("Data base connected sucessfull");  
@@ -22,4 +23,5 @@ db.on('disconnected',()=>{
 db.on('error',(err)=>{
     console.log("Error Is In Database",err);
 })
+
 module.exports = db;

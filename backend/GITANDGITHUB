@@ -1,0 +1,39 @@
+Here is the FULL TEXT version of the syntax shown in the image (clean & copy-paste ready):
+
+git config
+git init
+git clone <path>
+git add <file_name>
+git commit
+git status
+git remote
+git checkout <branch_name>
+git branch
+git push
+git pull
+git merge <branch_name>
+git diff
+git reset
+git revert
+git tag
+git log
+
+✅ Commonly used full forms (extra helpful)
+git config --global user.name "Your Name"
+git config --global user.email "youremail@example.com"
+
+git add .
+git commit -m "message"
+git push origin main
+git pull origin main
+
+
+If you want:
+
+short meaning (Roman Hindi)
+
+exam notes
+
+one-line explanation of each
+
+Git workflow (init → push)

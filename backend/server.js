@@ -58,39 +58,44 @@
 // console.log(result);
 
 // ===========================================================================================
-
+    
 
 //method to share data 
 
 // GET POST PATCH DELETE
 // const { default: mongoose } = require('mongoose');
-
+require('dotenv').config();
 const express = require('express');
 const db = require('./db');
 const app = express();
-
 const bodyParser = require('body-parser');
-
+const PORT = process.env.PORT || 3000;
+const passport =require('./auth.js');
+const { jwtAuthMiddleware } = require('./jwt');
 app.use(bodyParser.json());
 // import Person from './models/Person';
-const Person =require('./models/Person');
 const Menu =require('./models/Menu');
  app.get('/',(req,res)=>{   //app is a instance of express js 
 res.send("Hey Faiz Welcome to my Hotel");
  })
+ 
  
  app.get('/chicken',(req,res)=>{
 res.send('chicken is Here');
  })
 
 
+
+app.use(passport.initialize());
+const localAuthMiddleware=passport.authenticate('local',{session:false});
+
 const MenuRouter = require('./routers/MenuRoutes');
-app.use('/Menu',MenuRouter);
+app.use('/Menu',localAuthMiddleware,MenuRouter);
 
-const PersonRouter = require('./routers/PersonRoutes');
-app.use('/Person',PersonRouter );
+const PersonRouter = require('./routers/PersonRoutes');  
+app.use('/Person',localAuthMiddleware,PersonRouter );
 
- app.listen(3000,()=>{   //3000 is like  a room no.
+ app.listen(PORT,()=>{   //3000 is like  a room no.
 console.log("server is running");
  })
 

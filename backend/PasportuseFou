@@ -1,0 +1,27 @@
+// passPort(is a middleware) use FOR authentication this is   this is a third party middleware
+
+// Authentication middleware is a pasport 
+// many of the prebuild statergy are there 
+
+
+// Install Passport
+
+// To use Passport.js in a Node.js application, you need to install the passport package along with the authentication strategies you intend to use.
+
+// For this course, we are using Local strategies authentication (username and password).
+
+// You would typically install passport-local
+
+// npm install passport passport-local
+
+
+// Once you’ve installed these packages, you can set up and configure Passport.js in your application.
+
+// const express = require('express');
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
+
+// const app = express();
+
+// // Initialize Passport
+// app.use(passport.initialize());

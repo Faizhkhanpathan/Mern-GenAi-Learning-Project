@@ -2,7 +2,17 @@ const express = require('express');
 const router = express.Router();
 const Menu = require('../models/Menu');
 
-  router.post('/', async (req,res)=>{
+
+
+// Here i am writing middleware its use for Logging 
+const logrequest = (req,res,next)=>{
+  console.log(`${new Date().toLocaleString()}`);
+  next();
+}
+// output  :26/12/2025, 11:24:23 am Request Mode to: /Menu
+
+
+  router.post('/', logrequest ,async (req,res)=>{
       try{
     const data = req.body;
     const MenuSchema = new Menu(data);
@@ -16,9 +26,12 @@ const Menu = require('../models/Menu');
       }
     })
 
+
+  
+
     //post For Menu
 
-router.get('/:NameofDish', async (req,res)=>{
+router.get('/:NameofDish', logrequest,async (req,res)=>{
   try{
   const NameofDish = req.params.NameofDish;
   if(NameofDish==='samosa'||NameofDish==='aluparatha'||NameofDish==='chicken fry'||NameofDish==='butterchicken'){
@@ -37,7 +50,7 @@ router.get('/:NameofDish', async (req,res)=>{
 
 
     
-router.get('/', async (req,res)=>{
+router.get('/', logrequest ,async (req,res)=>{
    try{
 const data = await Menu.find();
   console.log("Data recived Sucessfully"); 

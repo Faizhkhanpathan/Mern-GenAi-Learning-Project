@@ -3,3 +3,5 @@
 // npm i nodemon
 //nodemon server.js
 // npm run dev
+// npm install dotenv
+//npm install bycrpt

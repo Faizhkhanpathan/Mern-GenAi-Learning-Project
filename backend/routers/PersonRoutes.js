@@ -2,15 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Person = require('../models/Person');
 const { model } = require('mongoose');
-
-
-router.post('/',async (req,res)=>{
+const { generateToken } = require('../jwt');
+const logrequest = (req,res,next)=>{
+  console.log(`${new Date().toLocaleString()}`);
+  next();
+}
+router.post('/signup',logrequest,async (req,res)=>{
     try{
  const data=req.body;
     const newPerson = new Person(data);
     const response= await  newPerson.save();
     console.log('Data is saved');
-    res.status(201).json(response);
+    const token = generateToken(response.username);
+    console.log("Token is:",token);
+    res.status(201).json({response:response,token:token});
 
     }catch(error){
     console.log('Error saving data:', error.message);
@@ -32,7 +37,7 @@ router.post('/',async (req,res)=>{
 
 // here we write the code to get the work parameter 
 
-router.get('/:WorkType', async (req,res)=>{
+router.get('/:WorkType',logrequest, async (req,res)=>{
    try{
      const WorkType = req.params.WorkType;
    if(WorkType==='developer'||WorkType==='software'||WorkType==='hardware'||WorkType==='Aiml'){
@@ -50,7 +55,7 @@ res.status(404).json({error:'i found the error'});
 })
 
 
-router.put('/:id',async (req,res)=>{
+router.put('/:id',logrequest,async (req,res)=>{
   try{
     const Personid = req.params.id;
     const updatePersonId = req.body;
@@ -72,7 +77,7 @@ router.put('/:id',async (req,res)=>{
 })
 
 // delete id    
-router.delete('/:id', async (req,res)=>{
+router.delete('/:id', logrequest,async (req,res)=>{
   try{
   const PersonId=req.params.id;
    const response = await Person.findOneAndDelete(PersonId);
@@ -91,7 +96,7 @@ router.delete('/:id', async (req,res)=>{
 
 
 
-    router.get('/', async (req,res)=>{
+    router.get('/', logrequest,async (req,res)=>{
       try{
       const data = await Person.find();
       console.log('data recive sucessfully');
